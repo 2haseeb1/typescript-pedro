@@ -68,3 +68,44 @@ interface Person {
 let person: Person = { name: "John", age: 30 };  // Correct
 let person2: Person = { name: "John", age: "30" }; // Error: Type 'string' is not assignable to type 'number'
 ```
+
+## 7. Union and Intersection Types
+JavaScript: JavaScript does not provide a native way to handle multiple possible types for a variable in a type-safe manner.
+TypeScript: TypeScript allows the use of union types (which means a variable can be one of several types) and intersection types (combining multiple types together). This provides more flexibility while maintaining type safety.
+
+```javascript
+let value: string | number = 42;  // value can be either string or number
+value = "hello";  // Valid
+value = true;     // Error: Type 'boolean' is not assignable to type 'string | number'
+```
+## 8. What is an Intersection Type in TypeScript?
+In TypeScript, an intersection type is a way to combine multiple types into one. This means that the resulting type will include all the properties from the combined types. An object of an intersection type must satisfy all the types involved.
+
+```javascript
+type IntersectionType = Type1 & Type2;
+```
+How It Works
+When you use the & operator, TypeScript combines types into a single type that inherits all members from the participating types. This is useful when you need to merge several types into one and ensure that the result has all properties defined in the intersected types.
+
+## Example 1: Combining Object Types
+```javascript
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = {
+  company: string;
+  role: string;
+};
+
+type EmployeeDetails = Person & Employee;
+
+const john: EmployeeDetails = {
+  name: "John Doe",
+  age: 30,
+  company: "TechCorp",
+  role: "Developer",
+};
+```
+
