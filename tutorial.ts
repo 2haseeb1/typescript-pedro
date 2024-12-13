@@ -32,4 +32,11 @@ area:()=>string
 const circle: Shape={
     area:()=>(3.14*5*55).toFixed(2)
 }
-console.log("area rusult",circle.area())
+console.log("area rusult", circle.area())
+
+
+   function greet(name: string): string {
+    return `Hello, ${name}!`;
+  }
+  
+  console.log(greet("Alice")); 
