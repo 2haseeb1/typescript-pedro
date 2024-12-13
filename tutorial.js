@@ -12,3 +12,7 @@ var personDetails = {
     age: 34
 };
 console.log(personDetails);
+var circle = {
+    area: function () { return (3.14 * 5 * 55).toFixed(2); }
+};
+console.log("area rusult", circle.area());

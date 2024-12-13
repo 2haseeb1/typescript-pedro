@@ -108,4 +108,34 @@ const john: EmployeeDetails = {
   role: "Developer",
 };
 ```
+## Example 2: Combining Interfaces
 
+```javascript
+interface Shape {
+  area: () => number;
+}
+
+interface Colorful {
+  color: string;
+}
+
+type ColoredShape = Shape & Colorful;
+
+const square: ColoredShape = {
+  area: () => 25,
+  color: "blue",
+};
+```
+### Example 1: Simple Usage
+Here’s how you can use this function signature in an interface:
+```javascript
+interface Shape {
+  area: () => number;
+}
+
+const circle: Shape = {
+  area: () => 3.14 * 5 * 5,  // Returns a number
+};
+
+console.log(circle.area());  // Output: 78.5
+```

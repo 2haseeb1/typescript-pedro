@@ -25,3 +25,11 @@ let personDetails: Person = {
     age:34
 }
 console.log(personDetails)
+
+interface Shape{
+area:()=>string
+}
+const circle: Shape={
+    area:()=>(3.14*5*55).toFixed(2)
+}
+console.log("area rusult",circle.area())
